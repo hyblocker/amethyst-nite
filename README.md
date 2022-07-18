@@ -4,7 +4,16 @@
 This project is licensed under the MIT License. 
 
 ## **Downloads**
-Uhhhhhhhhhhhhhhhh coming soon&trade;!!
+See [Releases](https://github.com/hyblocker/amethyst-nite/releases/latest).
+
+## **Installation**
+To install this plugin:
+1. [Install Amethyst](https://github.com/KinectToVR/Amethyst-Releases)
+2. Extract the latest release into the Amethyst install directory (the root directory of your install).
+3. Go to the Devices page, select "Xbox 360 Kinect", then click the arrow button next to the "Disconnect" button on the right, and press the "Disconnect" button to disconnect the Xbox 360 Kinect.
+4. Select "Xbox 360 Kinect (NiTE)", then click the "Refresh" button on the right. Once the lag spike finishes, verify that the status says "Success!". If it says "Success!" click the "Set Device as..." button and set the device as base.
+5. Restart Amethyst (you can keep SteamVR and your other VR apps running).
+6. Calibrate as you normally would and you're good to go!
 
 ## **Build & Deploy**
 Both build and deployment instructions [are available here](https://github.com/hyblocker/amethyst-nite/blob/main/BUILD_AND_DEPLOY.md).
