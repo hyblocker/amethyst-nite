@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{514E6969-C546-4A99-88CA-F5E62BF940D6}</ProjectGuid>
+    <RootNamespace>deviceKinectV1_NiTE</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(OPENNI2_INCLUDE64);$(NITE2_INCLUDE64);C:\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OPENNI2_LIB64);$(NITE2_LIB64);C:\opencv\build\x86\vc10\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(OPENNI2_INCLUDE64);$(NITE2_INCLUDE64);C:\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OPENNI2_LIB64);$(NITE2_LIB64);C:\opencv\build\x86\vc10\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgTriplet>x64-windows</VcpkgTriplet>
+    <IncludePath>$(OPENNI2_INCLUDE64);$(NITE2_INCLUDE64);C:\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OPENNI2_LIB64);$(NITE2_LIB64);C:\opencv\build\x86\vc10\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgTriplet>x64-windows</VcpkgTriplet>
+    <IncludePath>$(OPENNI2_INCLUDE64);$(NITE2_INCLUDE64);C:\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(OPENNI2_LIB64);$(NITE2_LIB64);C:\opencv\build\x86\vc10\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;DEVICEKinectV1_NiTE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(OPENNI2_INCLUDE64);$(NITE2_INCLUDE64);$(SolutionDir)external\gflags\builds\include;$(SolutionDir)external\glog\src;$(SolutionDir)external\glog\builds;$(SolutionDir)external\eigen;$(SolutionDir)external\vendor;$(KINECTSDK10_DIR)inc;$(SolutionDir)external\vendor\Amethyst;$(SolutionDir)external\cereal\include;$(SolutionDir)external\OpenNI2\Include;$(SolutionDir)external\NiTE2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(OPENNI2_LIB64);$(NITE2_LIB64);$(KINECTSDK10_DIR)lib\amd64;$(SolutionDir)$(Platform)\$(Configuration);$(SolutionDir)external\OpenNI2\Lib;$(SolutionDir)external\NiTE2\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OPENNI2.lib;NiTE2.lib;Kinect10.lib;$(SolutionDir)external\glog\builds\$(Configuration)\glogd.lib;$(SolutionDir)external\gflags\builds\lib\$(Configuration)\gflags_debug.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE"
+
+xcopy /y /d /i /e "$(ProjectDir)device_resources\*" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\"
+
+xcopy /y /d "$(SolutionDir)$(Platform)\$(Configuration)\$(TargetName)$(TargetExt)" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\bin\win64\"
+
+xcopy /y /d "$(SolutionDir)external\gflags\builds\bin\$(Configuration)\gflags*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\bin\win64\"
+xcopy /y /d "$(SolutionDir)external\glog\builds\$(Configuration)\glog*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\bin\win64\"
+
+xcopy /y /i /e "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE" "$(SolutionDir)$(Platform)\$(Configuration)\Amethyst\devices\KinectV1_NiTE"
+
+xcopy /y /d /i /e "$(ProjectDir)device_resources\bin\win64\NiTE2" "$(SolutionDir)$(Platform)\$(Configuration)\Amethyst\NiTE2"
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;DEVICEKinectV1_NiTE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(OPENNI2_INCLUDE64);$(NITE2_INCLUDE64);$(SolutionDir)external\gflags\builds\include;$(SolutionDir)external\glog\src;$(SolutionDir)external\glog\builds;$(SolutionDir)external\eigen;$(SolutionDir)external\vendor;$(KINECTSDK10_DIR)inc;$(SolutionDir)external\vendor\Amethyst;$(SolutionDir)external\cereal\include;$(SolutionDir)external\OpenNI2\Include;$(SolutionDir)external\NiTE2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(OPENNI2_LIB64);$(NITE2_LIB64);$(KINECTSDK10_DIR)lib\amd64;$(SolutionDir)$(Platform)\$(Configuration);$(SolutionDir)external\OpenNI2\Lib;$(SolutionDir)external\NiTE2\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OPENNI2.lib;NiTE2.lib;Kinect10.lib;$(SolutionDir)external\glog\builds\$(Configuration)\glog.lib;$(SolutionDir)external\gflags\builds\lib\$(Configuration)\gflags.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE"
+
+xcopy /y /d /i /e "$(ProjectDir)device_resources\*" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\"
+
+xcopy /y /d "$(SolutionDir)$(Platform)\$(Configuration)\$(TargetName)$(TargetExt)" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\bin\win64\"
+
+xcopy /y /d "$(SolutionDir)external\gflags\builds\bin\$(Configuration)\gflags*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\bin\win64\"
+xcopy /y /d "$(SolutionDir)external\glog\builds\$(Configuration)\glog*.dll" "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE\bin\win64\"
+
+xcopy /y /i /e "$(SolutionDir)$(Platform)\$(Configuration)\devices\KinectV1_NiTE" "$(SolutionDir)$(Platform)\$(Configuration)\Amethyst\devices\KinectV1_NiTE"
+
+xcopy /y /d /i /e "$(ProjectDir)device_resources\bin\win64\NiTE2" "$(SolutionDir)$(Platform)\$(Configuration)\Amethyst\NiTE2"
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="KinectV1_NiTEHandler.h" />
+    <ClInclude Include="LocalizedStatuses.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="KinectV1_NiTEHandler.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
